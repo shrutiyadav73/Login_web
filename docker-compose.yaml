@@ -1,0 +1,19 @@
+version: '3.0'
+services:
+  
+  frontend:
+    build:
+      context: .
+    container_name: InviIms_Frontend_DEV
+    env_file:
+      - .env
+    # depends_on:
+    #   - backend
+    restart: on-failure
+    networks:
+      - gem_frontend-network_dev   
+    ports:
+      - "3106:3106"                 
+networks:
+  default-network_dev:
+  gem_frontend-network_dev:
